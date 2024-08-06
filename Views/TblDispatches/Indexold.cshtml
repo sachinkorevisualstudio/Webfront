@@ -1,0 +1,215 @@
+@model IEnumerable<Webfront.Models.TblDispatch>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Chalanno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegOrStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monthnamex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yearnamex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Partyname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Txtpartynamesearched)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Site)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicleno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Drivername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supervisorname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ton)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RateFromchart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransportCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RateApplied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gstcustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GstAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmountBill)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discountpercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Royalty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payablebillwithdiscount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashPaymentRs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OnlinePaymentRs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JamaAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monthnumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chalanno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegOrStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monthnamex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yearnamex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partyname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Txtpartynamesearched)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Site)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicleno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drivername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supervisorname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ton)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RateFromchart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransportCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RateApplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gstcustomer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GstAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAmountBill)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discountpercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Royalty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payablebillwithdiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CashPaymentRs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OnlinePaymentRs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JamaAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monthnumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

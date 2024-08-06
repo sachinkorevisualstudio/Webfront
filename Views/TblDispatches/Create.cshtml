@@ -1,0 +1,355 @@
+@model Webfront.Models.TblDispatch
+
+@{
+    ViewData["Title"] = "Create";
+
+    // List of material options
+    var materialsx9 = new List<string>
+    {
+        "GSB",
+        "WMM",
+        "60MM",
+        "40MM",
+        "26MM",
+        "20MM",
+        "10MM",
+        "8/6MM",
+        "MSAND",
+        "DUST",
+        "Washable_sand",
+        "Washable_plaster_sand",
+        "Stone",
+        "WASTAGE",
+        "robo_sand",
+        "sander",
+        "OPENING_BAL"
+    };
+}
+
+<h1>Create</h1>
+
+<h4>TblDispatch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Chalanno" class="control-label"></label>
+                <input asp-for="Chalanno" class="form-control" type="number" min="1" max="999999" step="1" />
+                <span asp-validation-for="Chalanno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label type="hidden" asp-for="RegOrStock" class="control-label"></label>
+                <input type="hidden" asp-for="RegOrStock" class="form-control" />
+                <span asp-validation-for="RegOrStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datex" class="control-label"></label>
+                <input asp-for="Datex" class="form-control" type="date" id="datex" />
+                <span asp-validation-for="Datex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden="true" asp-for="Timex" class="control-label"></label>
+                <input type="hidden" asp-for="Timex" class="form-control" />
+                <span asp-validation-for="Timex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monthnamex" class="control-label"></label>
+                <input asp-for="Monthnamex" class="form-control" id="monthnamex" readonly />
+                <span asp-validation-for="Monthnamex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yearnamex" class="control-label"></label>
+                <input asp-for="Yearnamex" class="form-control" id="yearnamex" readonly />
+                <span asp-validation-for="Yearnamex" class="text-danger"></span>
+            </div>
+
+
+           
+
+
+
+            <div class="form-group">
+                <label asp-for="Partyname" class="control-label"></label>
+                <input asp-for="Partyname" class="form-control" id="partyname" placeholder="Select Party Name" />
+                <span asp-validation-for="Partyname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Txtpartynamesearched" class="control-label"></label>
+                <input asp-for="Txtpartynamesearched" class="form-control" />
+                <span asp-validation-for="Txtpartynamesearched" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Site" class="control-label"></label>
+                <input asp-for="Site" class="form-control" />
+                <span asp-validation-for="Site" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicleno" class="control-label"></label>
+                <input asp-for="Vehicleno" class="form-control" />
+                <span asp-validation-for="Vehicleno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Drivername" class="control-label"></label>
+                <input asp-for="Drivername" class="form-control" />
+                <span asp-validation-for="Drivername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supervisorname" class="control-label"></label>
+                <input type="hidden" asp-for="Supervisorname" class="form-control" />
+                <span asp-validation-for="Supervisorname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material" class="control-label"></label>
+                <select asp-for="Material" class="form-control">
+                    <option value="">Select Material</option>
+                    @foreach (var material in materialsx9)
+                    {
+                        <option value="@material">@material</option>
+                    }
+                </select>
+                <span asp-validation-for="Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip" class="control-label"></label>
+                <input asp-for="Trip" class="form-control" />
+                <span asp-validation-for="Trip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ton" class="control-label"></label>
+                <input asp-for="Ton" class="form-control" />
+                <span asp-validation-for="Ton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RateFromchart" class="control-label"></label>
+                <input asp-for="RateFromchart" class="form-control" />
+                <span asp-validation-for="RateFromchart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportCharge" class="control-label"></label>
+                <input asp-for="TransportCharge" class="form-control" />
+                <span asp-validation-for="TransportCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RateApplied" class="control-label"></label>
+                <input asp-for="RateApplied" class="form-control" />
+                <span asp-validation-for="RateApplied" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount1" class="control-label"></label>
+                <input asp-for="Amount1" class="form-control" />
+                <span asp-validation-for="Amount1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gstcustomer" class="control-label"></label>
+                <input asp-for="Gstcustomer" class="form-control" />
+                <span asp-validation-for="Gstcustomer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GstAmount" class="control-label"></label>
+                <input asp-for="GstAmount" class="form-control" />
+                <span asp-validation-for="GstAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAmountBill" class="control-label"></label>
+                <input asp-for="TotalAmountBill" class="form-control" />
+                <span asp-validation-for="TotalAmountBill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discountpercent" class="control-label"></label>
+                <input asp-for="Discountpercent" class="form-control" />
+                <span asp-validation-for="Discountpercent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Royalty" class="control-label"></label>
+                <input asp-for="Royalty" class="form-control" />
+                <span asp-validation-for="Royalty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payablebillwithdiscount" class="control-label"></label>
+                <input asp-for="Payablebillwithdiscount" class="form-control" />
+                <span asp-validation-for="Payablebillwithdiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CashPaymentRs" class="control-label"></label>
+                <input asp-for="CashPaymentRs" class="form-control" />
+                <span asp-validation-for="CashPaymentRs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OnlinePaymentRs" class="control-label"></label>
+                <input asp-for="OnlinePaymentRs" class="form-control" />
+                <span asp-validation-for="OnlinePaymentRs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label"></label>
+                <input asp-for="Summary" class="form-control" />
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JamaAmt" class="control-label"></label>
+                <input asp-for="JamaAmt" class="form-control" />
+                <span asp-validation-for="JamaAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monthnumber" class="control-label"></label>
+                <input asp-for="Monthnumber" class="form-control" type="number" min="1" max="12" step="1" />
+                <span asp-validation-for="Monthnumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+<!-- Add Party Name Modal -->
+<div class="modal fade" id="addPartyModal" tabindex="-1" role="dialog" aria-labelledby="addPartyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPartyModalLabel">Add New Party Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addPartyForm" action="https://localhost:61803/TblDispatches/AddPartyName" method="post">
+                    <div class="form-group">
+                        <label for="newPartyName">Party Name</label>
+                        <input type="text" class="form-control" id="newPartyName" name="newPartyName" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Party Name</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--popup-model end -->
+
+
+
+@section Scripts {
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script>
+    <link href="~/js/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/js/jquery-confirm.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('form').on('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Display an alert message
+                //alert('1 Form submitted successfully!');
+
+                // Optionally, you can submit the form programmatically
+                 this.submit(); // Uncomment this line to allow form submission after showing the alert
+                // Show alert message if TempData["SuccessMessage"] is present
+                var successMessage = '@TempData["SuccessMessagex"]';
+                if (successMessage) {
+                    alert(successMessage); // Display the success message
+                }
+            });
+        });
+
+
+
+
+
+        $(document).ready(function () {
+            var partyNamesArray = [];
+
+            // Populate partyname dropdown on page load and store data in array
+            $.ajax({
+                url: 'https://localhost:61803/TblDispatches/GetPartyNames',
+                type: 'GET',
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                        if (item && item.partyname) {
+                            partyNamesArray.push(item.partyname);
+                        } else {
+                            console.error('Item does not contain partyname:', item);
+                        }
+                    });
+
+                    // Sort the array alphabetically
+                    partyNamesArray.sort();
+
+                    $('#partyname').autocomplete({
+                        source: function (request, response) {
+                            var results = $.ui.autocomplete.filter(partyNamesArray, request.term);
+                            if (!request.term) {
+                                results = partyNamesArray;
+                            }
+                            response(results);
+                        },
+                        select: function (event, ui) {
+                            $('#partyname').val(ui.item.value);
+                            return false;
+                        },
+                        minLength: 0
+                    }).focus(function () {
+                        $(this).autocomplete('search', '');
+                    });
+
+                    // Check if the party name exists on focus out
+                    $('#partyname').on('focusout', function () {
+                        var inputVal = $(this).val();
+                        if (inputVal && !partyNamesArray.includes(inputVal)) {
+                            $.confirm({
+                                title: 'Party Name Not Found',
+                                content: 'The entered party name is not in the list. Would you like to add a new party name?',
+                                buttons: {
+                                    Yes: function () {
+                                        $('#addPartyModal').modal('show');
+                                    },
+                                    No: function () {
+                                        // Do nothing
+                                    }
+                                }
+                            });
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX Error:', status, error);
+                }
+            });
+
+            // Fill Monthnamex and Yearnamex based on Datex
+            $('#datex').on('change', function () {
+                var dateValue = $(this).val();
+                if (dateValue) {
+                    var dateObj = new Date(dateValue);
+                    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var monthName = monthNames[dateObj.getMonth()];
+                    var yearName = dateObj.getFullYear();
+                    $('#monthnamex').val(monthName);
+                    $('#yearnamex').val(yearName);
+                }
+            });
+        });
+
+
+
+    </script>
+    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

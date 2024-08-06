@@ -1,0 +1,127 @@
+@model Webfront.Models.DispatchListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-striped table-hover  table-light">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Chalanno)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].RegOrStock)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Datex)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Timex)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Monthnamex)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Yearnamex)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Partyname)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Txtpartynamesearched)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Site)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Vehicleno)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Drivername)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Supervisorname)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Material)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Trip)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Ton)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Qty)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].RateFromchart)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].TransportCharge)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].RateApplied)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Amount1)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Gstcustomer)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].GstAmount)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].TotalAmountBill)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Discountpercent)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Royalty)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Payablebillwithdiscount)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].CashPaymentRs)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].OnlinePaymentRs)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Summary)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].JamaAmt)</th>
+            <th>@Html.DisplayNameFor(model => model.Dispatches[0].Monthnumber)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Dispatches)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Chalanno)</td>
+                <td>@Html.DisplayFor(modelItem => item.RegOrStock)</td>
+                <td>@Html.DisplayFor(modelItem => item.Datex)</td>
+                <td>@Html.DisplayFor(modelItem => item.Timex)</td>
+                <td>@Html.DisplayFor(modelItem => item.Monthnamex)</td>
+                <td>@Html.DisplayFor(modelItem => item.Yearnamex)</td>
+                <td>@Html.DisplayFor(modelItem => item.Partyname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Txtpartynamesearched)</td>
+                <td>@Html.DisplayFor(modelItem => item.Site)</td>
+                <td>@Html.DisplayFor(modelItem => item.Vehicleno)</td>
+                <td>@Html.DisplayFor(modelItem => item.Drivername)</td>
+                <td>@Html.DisplayFor(modelItem => item.Supervisorname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Material)</td>
+                <td>@Html.DisplayFor(modelItem => item.Trip)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ton)</td>
+                <td>@Html.DisplayFor(modelItem => item.Qty)</td>
+                <td>@Html.DisplayFor(modelItem => item.RateFromchart)</td>
+                <td>@Html.DisplayFor(modelItem => item.TransportCharge)</td>
+                <td>@Html.DisplayFor(modelItem => item.RateApplied)</td>
+                <td>@Html.DisplayFor(modelItem => item.Amount1)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gstcustomer)</td>
+                <td>@Html.DisplayFor(modelItem => item.GstAmount)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalAmountBill)</td>
+                <td>@Html.DisplayFor(modelItem => item.Discountpercent)</td>
+                <td>@Html.DisplayFor(modelItem => item.Royalty)</td>
+                <td>@Html.DisplayFor(modelItem => item.Payablebillwithdiscount)</td>
+                <td>@Html.DisplayFor(modelItem => item.CashPaymentRs)</td>
+                <td>@Html.DisplayFor(modelItem => item.OnlinePaymentRs)</td>
+                <td>@Html.DisplayFor(modelItem => item.Summary)</td>
+                <td>@Html.DisplayFor(modelItem => item.JamaAmt)</td>
+                <td>@Html.DisplayFor(modelItem => item.Monthnumber)</td>
+                <td>
+                   <button> <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |</button>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    Page @(Model.Pagination.CurrentPage) of @(Model.Pagination.TotalPages)
+</div>
+
+<div class="pagination">
+    @if (Model.Pagination.CurrentPage > 1)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage - 1)"> Previous </a>
+    }
+
+    @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
+    { 
+        if (i == Model.Pagination.CurrentPage)
+        {
+            
+            <span class="alert-info"> @i  </span>
+        }
+        else
+        {
+            
+            <a asp-action="Index" asp-route-page="@i">  @i  </a>
+        }
+        if (i < Model.Pagination.TotalPages)
+        {
+            <span>&nbsp;</span> <!-- Add non-breaking space between numbers -->
+        }
+    }
+
+    @if (Model.Pagination.CurrentPage < Model.Pagination.TotalPages)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage + 1)"> Next </a>
+    }
+</div>
